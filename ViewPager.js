@@ -48,6 +48,7 @@ var ViewPager = React.createClass({
 
   getDefaultProps() {
     return {
+      style: {flex: 1},
       isLoop: false,
       locked: false,
       animation: function(animate, toValue, gs) {
@@ -290,7 +291,7 @@ var ViewPager = React.createClass({
 
     var sceneContainerStyle = {
       width: viewWidth * pagesNum,
-      flex: 1,
+      // flex: 1,
       flexDirection: 'row'
     };
 
@@ -301,7 +302,7 @@ var ViewPager = React.createClass({
     });
 
     return (
-      <View style={{flex: 1}}
+      <View style={this.props.style}
         onLayout={(event) => {
             // console.log('ViewPager.onLayout()');
             var viewWidth = event.nativeEvent.layout.width;
